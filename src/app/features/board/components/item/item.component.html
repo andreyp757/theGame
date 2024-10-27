@@ -1,0 +1,25 @@
+<div [matMenuTriggerFor]="menu" [matTooltip]="item.isCollectible ? 'Can be upgraded' : 'See actions'">
+  {{ item.level | romanNumeral }}
+</div>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [disabled]="!item.isCollectible" (click)="mergeUpgrade()">
+    <mat-icon fontIcon="merge_type"></mat-icon>
+    <span>Merge Upgrade</span>
+  </button>
+  <button mat-menu-item disabled>
+    <mat-icon fontIcon="upgrade"></mat-icon>
+    <span>Upgrade</span>
+  </button>
+  <button mat-menu-item
+    [disabled]="item.level <= 2"
+    (click)="sellItem()"
+    [matTooltip]="item.level > 2 ? 'Can be sold for: ' + item.cost : null">
+    <mat-icon fontIcon="attach_money"></mat-icon>
+    <span>{{ item.level > 2 ? 'Sell' : 'Only from Level 3' }}</span>
+  </button>
+  <button mat-menu-item disabled>
+    <mat-icon fontIcon="add_home"></mat-icon>
+    <span>Add to inventory</span>
+  </button>
+</mat-menu>

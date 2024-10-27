@@ -1,0 +1,11 @@
+<div class="board">
+  @for (row of boardStore.tilesWithZones(); let rowIndex = $index; track rowIndex) {
+    <div class="board__row">
+      @for (tile of row; track tile.x + '-' + tile.y) {
+        <div class="board__tile">
+          <app-tile [tile]="tile"></app-tile>
+        </div>
+      }
+    </div>
+  }
+</div>

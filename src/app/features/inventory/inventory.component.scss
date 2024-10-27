@@ -1,0 +1,26 @@
+:host {
+  min-width: 400px;
+  margin-bottom: 40px;
+}
+
+.funds {
+  color: green;
+  margin-left: 4px;
+
+  &.is-error {
+    color: red;
+  }
+}
+
+.no-funds {
+  padding-top: 12px;
+  margin-bottom: -30px;
+  color: red;
+  text-align: center;
+}
+
+.inventory-state {
+  color: #999;
+  margin-left: 4px;
+  font-weight: 400;
+}

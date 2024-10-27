@@ -1,0 +1,15 @@
+<mat-accordion>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Funds: <b class="funds" [class.is-error]="inventoryStore.fundsError()">{{ inventoryStore.funds() }}</b>
+      </mat-panel-title>
+      <mat-panel-description>Inventory: <b class="inventory-state is-empty">Empty</b></mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>No items in backpack!</p>
+  </mat-expansion-panel>
+</mat-accordion>
+
+@if (inventoryStore.fundsError()) {
+  <div class="no-funds">Insufficient funds</div>
+}

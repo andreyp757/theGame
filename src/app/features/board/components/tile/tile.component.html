@@ -1,0 +1,12 @@
+@if (tile.zone) {
+  <app-zone [zone]="tile.zone"></app-zone>
+}
+@else if (tile.obstacle) {
+  <app-obstacle [obstacle]="tile.obstacle"></app-obstacle>
+}
+@else if (tile.factory) {
+  <app-factory [factory]="tile.factory"></app-factory>
+}
+@else if (tile.item) {
+  <app-item [item]="tile.item" [tileCoords]="{ x: tile.x, y: tile.y }"></app-item>
+}
