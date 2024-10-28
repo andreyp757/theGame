@@ -84,7 +84,7 @@ export const BoardStore = signalStore(
           patchState(state, { mergeItems: [] });
           item.updateLevel();
         } else {
-          const additionalIds = mergeableNeighbors.slice(0, 2).map(tile => tile.item?.id).filter(id => id !== undefined);
+          const additionalIds = mergeableNeighbors.slice(0, 2).map(tile => tile.item?.id).filter(id => id !== undefined); // NOT GOOD
           patchState(state, { mergeItems: [item.id, ...additionalIds] });
           item.setCollectible(true);
         }
